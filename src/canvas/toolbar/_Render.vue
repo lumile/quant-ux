@@ -2428,10 +2428,12 @@ export default {
 			css.add(parent, "MatcToolbarSection");
 			console.log("lbl", lbl);
 
-			if(lbl === 'Text'){
-				console.log("yes");
-				css.add(parent, "hidden");
-			}
+			const sectionToHide = ['Text', 'Border', 'Padding', 'Background']
+			sectionToHide.forEach( section => {
+				if(lbl === section){
+					css.add(parent, "hidden");
+				}
+			});
 
 			var header = this.createSectionHeader( parent, lbl,hasTemplateMarker, settingsCallback);
 
