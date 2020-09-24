@@ -2424,7 +2424,14 @@ export default {
 		createSection:function(lbl, hasTemplateMarker, settingsCallback){
 
 			var parent = document.createElement("div");
+			console.log("parent", parent);
 			css.add(parent, "MatcToolbarSection");
+			console.log("lbl", lbl);
+
+			if(lbl === 'Text'){
+				console.log("yes");
+				css.add(parent, "hidden");
+			}
 
 			var header = this.createSectionHeader( parent, lbl,hasTemplateMarker, settingsCallback);
 
